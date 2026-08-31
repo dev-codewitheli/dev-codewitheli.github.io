@@ -552,10 +552,9 @@ h1, h2, h3 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: var(--space-md);
+  overflow: hidden;              /* clip the media banner to rounded corners */
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
   transition: transform var(--speed) var(--ease), border-color var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
 }
 .project-card:hover {
@@ -563,24 +562,69 @@ h1, h2, h3 {
   border-color: var(--accent);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--accent-glow);
 }
-.project-card__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+/* Screenshot / thumbnail banner. Falls back to a glyph when no image loads. */
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface-hover));
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
-.project-card__folder { font-size: 1.6rem; }
+.project-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform var(--speed) var(--ease);
+}
+.project-card:hover .project-card__img { transform: scale(1.04); }
+/* Shown (via JS onerror) when the screenshot file is missing */
+.project-card__media.is-empty::after {
+  content: "</>";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  color: var(--accent);
+  opacity: 0.45;
+}
 .project-card__links {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
   display: flex;
-  gap: var(--space-sm);
+  gap: 0.4rem;
+  z-index: 1;
 }
 .project-card__link {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg) 65%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
   font-family: var(--font-mono);
-  color: var(--text-dim);
-  font-size: 1rem;
-  transition: color var(--speed) var(--ease), transform var(--speed) var(--ease);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: color var(--speed) var(--ease), border-color var(--speed) var(--ease), transform var(--speed) var(--ease);
 }
-.project-card__link:hover { color: var(--accent); transform: translateY(-2px); }
+.project-card__link:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
 
+/* Text content below the banner */
+.project-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex-grow: 1;
+}
 .project-card__title { font-size: 1.2rem; }
 .project-card__role {
   font-family: var(--font-mono);

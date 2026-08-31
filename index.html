@@ -339,10 +339,14 @@
 
         <div class="projects__grid">
           <!-- These are client/production projects — add repo or live URLs where public,
-               otherwise leave href="#" (or remove the link icon). -->
+               otherwise leave href="#" (or remove the link icon).
+               SCREENSHOTS: drop image files in assets/projects/ using the src names below.
+               If a file is missing the card shows a graceful "</>" placeholder. -->
           <article class="project-card">
-            <div class="project-card__top">
-              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+            <div class="project-card__media">
+              <!-- TODO: add assets/projects/aga-appointment.png — use a REDACTED / logged-out view (live screens show patient PII) -->
+              <img class="project-card__img" src="assets/projects/aga-appointment.png" alt="AGA Clinic Appointment App screenshot"
+                   onerror="this.closest('.project-card__media').classList.add('is-empty');this.remove()" />
               <div class="project-card__links">
                 <!-- GitHub repo icon — uncomment and set href when a public repo exists:
                 <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
@@ -350,22 +354,25 @@
                 <a href="https://examination.agahairclinic.com/" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
               </div>
             </div>
-            <h3 class="project-card__title">AGA Clinic Appointment App</h3>
-            <p class="project-card__role">Lead Backend · Team of 5</p>
-            <p class="project-card__desc">
-              An appointment platform (web &amp; mobile) that automates scheduling
-              for clinic, salon, and online consultations — with prescriptions,
-              orders, payment and shipment tracking, staff shifts, and medicine
-              inventory.
-            </p>
-            <ul class="project-card__tech">
-              <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>Redis</li><li>RabbitMQ</li><li>Angular</li>
-            </ul>
+            <div class="project-card__body">
+              <h3 class="project-card__title">AGA Clinic Appointment App</h3>
+              <p class="project-card__role">Lead Backend · Team of 5</p>
+              <p class="project-card__desc">
+                An appointment platform (web &amp; mobile) that automates scheduling
+                for clinic, salon, and online consultations — with prescriptions,
+                orders, payment and shipment tracking, staff shifts, and medicine
+                inventory.
+              </p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>Redis</li><li>RabbitMQ</li><li>Angular</li>
+              </ul>
+            </div>
           </article>
 
           <article class="project-card">
-            <div class="project-card__top">
-              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+            <div class="project-card__media">
+              <img class="project-card__img" src="assets/projects/eserbisyo.webp" alt="eSERBISYO LRA Web Portal screenshot"
+                   onerror="this.closest('.project-card__media').classList.add('is-empty');this.remove()" />
               <div class="project-card__links">
                 <!-- GitHub repo icon — uncomment and set href when a public repo exists:
                 <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
@@ -373,22 +380,25 @@
                 <a href="https://eserbisyo.lra.gov.ph/" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
               </div>
             </div>
-            <h3 class="project-card__title">eSERBISYO — LRA Web Portal</h3>
-            <p class="project-card__role">Project Lead · Team of 5</p>
-            <p class="project-card__desc">
-              A public portal for the Land Registration Authority letting citizens
-              request, pay for, and track Certified True Copies of land titles
-              online — with document uploads, receipt printing, reports, and
-              SMS &amp; email notifications.
-            </p>
-            <ul class="project-card__tech">
-              <li>Java</li><li>Spring</li><li>Hibernate</li><li>Sybase</li><li>JBoss WildFly</li>
-            </ul>
+            <div class="project-card__body">
+              <h3 class="project-card__title">eSERBISYO — LRA Web Portal</h3>
+              <p class="project-card__role">Project Lead · Team of 5</p>
+              <p class="project-card__desc">
+                A public portal for the Land Registration Authority letting citizens
+                request, pay for, and track Certified True Copies of land titles
+                online — with document uploads, receipt printing, reports, and
+                SMS &amp; email notifications.
+              </p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>Spring</li><li>Hibernate</li><li>Sybase</li><li>JBoss WildFly</li>
+              </ul>
+            </div>
           </article>
 
           <article class="project-card">
-            <div class="project-card__top">
-              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+            <div class="project-card__media">
+              <img class="project-card__img" src="assets/projects/splat.webp" alt="SPLAT screenshot"
+                   onerror="this.closest('.project-card__media').classList.add('is-empty');this.remove()" />
               <div class="project-card__links">
                 <!-- GitHub repo icon — uncomment and set href when a public repo exists:
                 <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
@@ -396,21 +406,24 @@
                 <a href="https://www.splat-ph.com/splat" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
               </div>
             </div>
-            <h3 class="project-card__title">SPLAT</h3>
-            <p class="project-card__role">Project Lead · Team of 3</p>
-            <p class="project-card__desc">
-              A student-behavior recognition system that rewards positive behavior
-              through a points store, plus attendance monitoring, seating charts,
-              student grouping, academic records, and report generation.
-            </p>
-            <ul class="project-card__tech">
-              <li>Java</li><li>Struts</li><li>Hibernate</li><li>MySQL</li><li>JasperReports</li>
-            </ul>
+            <div class="project-card__body">
+              <h3 class="project-card__title">SPLAT</h3>
+              <p class="project-card__role">Project Lead · Team of 3</p>
+              <p class="project-card__desc">
+                A student-behavior recognition system that rewards positive behavior
+                through a points store, plus attendance monitoring, seating charts,
+                student grouping, academic records, and report generation.
+              </p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>Struts</li><li>Hibernate</li><li>MySQL</li><li>JasperReports</li>
+              </ul>
+            </div>
           </article>
 
           <article class="project-card">
-            <div class="project-card__top">
-              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+            <div class="project-card__media">
+              <img class="project-card__img" src="assets/projects/ahc-corporate.webp" alt="AHC Corporate Site screenshot"
+                   onerror="this.closest('.project-card__media').classList.add('is-empty');this.remove()" />
               <div class="project-card__links">
                 <!-- GitHub repo icon — uncomment and set href when a public repo exists:
                 <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
@@ -418,16 +431,44 @@
                 <a href="https://agahairclinic.or.jp/" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
               </div>
             </div>
-            <h3 class="project-card__title">AHC Corporate Site &amp; Patient Registration</h3>
-            <p class="project-card__role">Lead Backend · Team of 3</p>
-            <p class="project-card__desc">
-              The public AGA Hair Clinic (AHC) site presenting company and clinic
-              details, treatment information, and an online first-counseling
-              reservation and patient registration form.
-            </p>
-            <ul class="project-card__tech">
-              <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>React</li>
-            </ul>
+            <div class="project-card__body">
+              <h3 class="project-card__title">AHC Corporate Site &amp; Patient Registration</h3>
+              <p class="project-card__role">Lead Backend · Team of 3</p>
+              <p class="project-card__desc">
+                The public AGA Hair Clinic (AHC) site presenting company and clinic
+                details, treatment information, and an online first-counseling
+                reservation and patient registration form.
+              </p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>React</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__media">
+              <img class="project-card__img" src="assets/projects/piu.webp" alt="Petersen International Underwriters (PIU) website screenshot"
+                   onerror="this.closest('.project-card__media').classList.add('is-empty');this.remove()" />
+              <div class="project-card__links">
+                <!-- GitHub repo icon — uncomment and set href when a public repo exists:
+                <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
+                -->
+                <a href="https://www.piu.org/" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">PIU Report &amp; Automated Response</h3>
+              <p class="project-card__role">Solo project</p>
+              <p class="project-card__desc">
+                An insurance system for Petersen International Underwriters (PIU)
+                that automates premium computations across multiple plans,
+                generates reports in PDF and Excel, and sends automated account
+                notices and transaction receipts.
+              </p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>MySQL</li><li>MS SQL Server</li><li>Apache POI</li><li>JasperReports</li>
+              </ul>
+            </div>
           </article>
 
         </div>
