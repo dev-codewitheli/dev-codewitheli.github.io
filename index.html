@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of a Senior Backend Developer — Java, Spring Boot, Hexagonal Architecture, Distributed Systems." />
+  <title>Elijah Gabriel Centeno — Senior Backend Developer</title>
+
+  <!-- Google Fonts: JetBrains Mono (headings/code) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============================================================
+       NAVIGATION (sticky, active-section highlight, mobile hamburger)
+  ============================================================ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <!-- TODO: replace "eli.dev" with your own logo / handle -->
+      <a href="#hero" class="nav__logo" aria-label="Home">
+        <span class="nav__logo-bracket">&lt;</span>eli.dev<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <!-- Theme toggle: dark <-> light-terminal -->
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle color theme"
+          title="Toggle theme"
+        >
+          <span class="theme-toggle__icon" aria-hidden="true">◐</span>
+        </button>
+
+        <!-- Hamburger (visible < 768px) -->
+        <button
+          class="nav__hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         1. HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <!-- Animated background canvas (particle grid) -->
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <div class="hero__content container">
+        <p class="hero__greeting">// initializing session...</p>
+
+        <h1 class="hero__name">Elijah Gabriel Centeno</h1>
+
+        <h2 class="hero__title">Senior Backend Developer</h2>
+
+        <!-- Animated typing effect cycles through these phrases -->
+        <p class="hero__tagline">
+          <span class="hero__prompt">$</span>
+          <span class="hero__typed" id="typed"></span><span class="hero__caret" aria-hidden="true">&#9608;</span>
+        </p>
+
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+          <!-- Résumé download — drop your PDF (e.g. resume.pdf) in the project root, then uncomment:
+          <a href="resume.pdf" class="btn btn--ghost" download>Download Résumé</a>
+          -->
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll to About">
+        <span class="hero__scroll-dot"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         2. ABOUT
+    ============================================================ -->
+    <section class="section about" id="about">
+      <div class="container reveal">
+        <h2 class="section__title"><span class="section__num">01.</span> About</h2>
+        <div class="about__grid">
+          <div class="about__text">
+            <!-- TODO: tweak this bio anytime -->
+            <p>
+              I'm Eli, a <strong>Senior Java Engineer</strong> at Spice Factory
+              Philippines (SFPH), where I've spent the past year building and
+              maintaining backend systems for both web and mobile applications.
+              As part of the Operations team, I design, build, and maintain
+              services with <strong>Java</strong> and <strong>Spring Boot</strong>,
+              focused on fast, secure, and high-quality delivery.
+            </p>
+            <p>
+              My day-to-day spans the full backend lifecycle — designing
+              PostgreSQL schemas and automating migrations with Liquibase,
+              implementing JWT-based security and following TDD, integrating
+              messaging and caching with <strong>RabbitMQ</strong> and
+              <strong>Redis</strong>, and wiring up third-party services for
+              payments, SMS, email, and push notifications. I deploy via
+              Docker and Heroku and keep production healthy with Papertrail,
+              Sentry, and New Relic.
+            </p>
+            <p>
+              Across roles — from freelance work to leading teams at ITPI and
+              RBS — I've grown deeper expertise in database optimization, cloud
+              server management, production monitoring, and clean coding
+              practices. Even in a fully remote setup, I enjoy leading technical
+              discussions, offering direction, and owning key features end to end.
+            </p>
+            <p>
+              Outside of work, you'll find me watching anime, gaming on PC and
+              mobile, serving in the church choir, and staying active through
+              sports.
+            </p>
+          </div>
+
+          <aside class="about__facts">
+            <ul class="about__fact-list">
+              <!-- TODO: edit these quick facts -->
+              <li><span class="about__fact-key">location</span> <span>Remote · Philippines</span></li>
+              <li><span class="about__fact-key">focus</span> <span>Backend &amp; Distributed Systems</span></li>
+              <li><span class="about__fact-key">stack</span> <span>Java · Spring · Postgres</span></li>
+              <li><span class="about__fact-key">status</span> <span class="about__status">@ Spice Factory PH</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. SKILLS
+    ============================================================ -->
+    <section class="section skills" id="skills">
+      <div class="container reveal">
+        <h2 class="section__title"><span class="section__num">02.</span> Skills</h2>
+
+        <div class="skills__groups">
+          <!-- TODO: add / remove skills in any group as needed -->
+          <!-- Backend -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">Backend</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Spring Security</span>
+              <span class="skill-tag">Spring Data JPA</span>
+              <span class="skill-tag">Spring MVC</span>
+              <span class="skill-tag">Hibernate</span>
+              <span class="skill-tag">Struts</span>
+              <span class="skill-tag">MyBatis</span>
+              <span class="skill-tag">Hexagonal Architecture</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">JWT</span>
+              <span class="skill-tag">TDD</span>
+            </div>
+          </div>
+
+          <!-- Data & Messaging -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">Data &amp; Messaging</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MS SQL Server</span>
+              <span class="skill-tag">Sybase</span>
+              <span class="skill-tag">Redis</span>
+              <span class="skill-tag">RabbitMQ</span>
+              <span class="skill-tag">Kafka</span>
+            </div>
+          </div>
+
+          <!-- DevOps & Cloud -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">DevOps &amp; Cloud</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Heroku</span>
+              <span class="skill-tag">Nginx</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
+              <span class="skill-tag">Jenkins</span>
+            </div>
+          </div>
+
+          <!-- Build & Observability -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">Build &amp; Observability</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">Gradle</span>
+              <span class="skill-tag">Maven</span>
+              <span class="skill-tag">Liquibase</span>
+              <span class="skill-tag">Apache POI</span>
+              <span class="skill-tag">JasperReports</span>
+              <span class="skill-tag">Papertrail</span>
+              <span class="skill-tag">Sentry</span>
+              <span class="skill-tag">New Relic</span>
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">Mobile</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">Flutter</span>
+            </div>
+          </div>
+
+          <!-- AI-Assisted Development -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">AI-Assisted Development</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">Claude Code</span>
+              <span class="skill-tag">GitHub Copilot</span>
+              <span class="skill-tag">JetBrains AI Assistant</span>
+            </div>
+          </div>
+
+          <!-- Other -->
+          <div class="skill-group">
+            <h3 class="skill-group__title">Other</h3>
+            <div class="skill-group__tags">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Image Recognition</span>
+              <span class="skill-tag">Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. EXPERIENCE (vertical timeline)
+    ============================================================ -->
+    <section class="section experience" id="experience">
+      <div class="container reveal">
+        <h2 class="section__title"><span class="section__num">03.</span> Experience</h2>
+
+        <ol class="timeline">
+          <!-- TODO: edit any entry below (reverse-chronological) -->
+          <li class="timeline__item">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <div class="timeline__meta">
+                <span class="timeline__date">Jun 2024 — Present</span>
+              </div>
+              <h3 class="timeline__role">Senior Java Engineer</h3>
+              <p class="timeline__company">Spice Factory Philippines Inc. (SFPH) · Full-time</p>
+              <ul class="timeline__points">
+                <li>Design and maintain backend systems for web and mobile apps; implement JWT-based auth, encrypted API credentials, and password hashing.</li>
+                <li>Automate PostgreSQL migrations with Liquibase and integrate RabbitMQ and Redis for messaging and caching across Dev, Staging, and Production.</li>
+                <li>Integrate third-party services (Veritrans, Vonage, Mailgun, Firebase); deploy via Docker/Heroku and monitor with Papertrail, Sentry, and New Relic.</li>
+                <li>Follow TDD, run code reviews, and produce technical docs — system architecture, ER diagrams, and integration guides.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <div class="timeline__meta">
+                <span class="timeline__date">Apr 2021 — May 2024</span>
+              </div>
+              <h3 class="timeline__role">Freelance Java Developer</h3>
+              <p class="timeline__company">Self-employed · Contract</p>
+              <ul class="timeline__points">
+                <li>Designed, built, and maintained Java/Spring Boot applications with a focus on code quality, performance, and scalability.</li>
+                <li>Delivered solo projects including the Axa-Pay payment gateway and the RSP recruitment &amp; online-examination system.</li>
+                <li>Produced technical documentation, mentored students and junior developers, and coordinated with offshore teams.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <div class="timeline__meta">
+                <span class="timeline__date">Nov 2019 — Jan 2021</span>
+              </div>
+              <h3 class="timeline__role">Lead Java Developer</h3>
+              <p class="timeline__company">Inventive Transformation Philippines Inc. (ITPI) · Full-time</p>
+              <ul class="timeline__points">
+                <li>Led the team delivering secure, high-performance web systems following SOLID principles and clean-code practices.</li>
+                <li>Designed and optimized schemas, stored procedures, and SQL for Sybase and MS SQL Server; integrated SMS, email, and bank gateways (LBP, DBP).</li>
+                <li>Owned the full lifecycle (Dev → UAT → Production), Linux deployments, and QA with Redmine and JMeter; mentored junior developers.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__node" aria-hidden="true"></div>
+            <div class="timeline__card">
+              <div class="timeline__meta">
+                <span class="timeline__date">Nov 2017 — Feb 2019</span>
+              </div>
+              <h3 class="timeline__role">Java Analyst / Developer</h3>
+              <p class="timeline__company">RightSize Business Systems Inc. (RBS) · Full-time</p>
+              <ul class="timeline__points">
+                <li>Built high-volume, low-latency Java applications and designed complex MySQL queries and data models.</li>
+                <li>Implemented security and data-protection measures — login, masking, encryption, and decryption.</li>
+                <li>Handled integration, testing, and debugging across development, test, and production environments.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. PROJECTS
+    ============================================================ -->
+    <section class="section projects" id="projects">
+      <div class="container reveal">
+        <h2 class="section__title"><span class="section__num">04.</span> Projects</h2>
+
+        <div class="projects__grid">
+          <!-- These are client/production projects — add repo or live URLs where public,
+               otherwise leave href="#" (or remove the link icon). -->
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+              <div class="project-card__links">
+                <!-- GitHub repo icon — uncomment and set href when a public repo exists:
+                <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
+                -->
+                <a href="https://agahairclinic.or.jp/" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">AGA Clinic Appointment App</h3>
+            <p class="project-card__role">Lead Backend · Team of 5</p>
+            <p class="project-card__desc">
+              An appointment platform (web &amp; mobile) that automates scheduling
+              for clinic, salon, and online consultations — with prescriptions,
+              orders, payment and shipment tracking, staff shifts, and medicine
+              inventory.
+            </p>
+            <ul class="project-card__tech">
+              <li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>Redis</li><li>RabbitMQ</li><li>Flutter</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+              <div class="project-card__links">
+                <!-- GitHub repo icon — uncomment and set href when a public repo exists:
+                <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
+                -->
+                <a href="https://eserbisyo.lra.gov.ph/" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">eSERBISYO — LRA Web Portal</h3>
+            <p class="project-card__role">Project Lead · Team of 5</p>
+            <p class="project-card__desc">
+              A public portal for the Land Registration Authority letting citizens
+              request, pay for, and track Certified True Copies of land titles
+              online — with document uploads, receipt printing, reports, and
+              SMS &amp; email notifications.
+            </p>
+            <ul class="project-card__tech">
+              <li>Java</li><li>Spring</li><li>Hibernate</li><li>Sybase</li><li>JBoss WildFly</li>
+            </ul>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__top">
+              <span class="project-card__folder" aria-hidden="true">&#128193;</span>
+              <div class="project-card__links">
+                <!-- GitHub repo icon — uncomment and set href when a public repo exists:
+                <a href="#" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
+                -->
+                <a href="https://www.splat-ph.com/splat" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
+              </div>
+            </div>
+            <h3 class="project-card__title">SPLAT</h3>
+            <p class="project-card__role">Project Lead · Team of 3</p>
+            <p class="project-card__desc">
+              A student-behavior recognition system that rewards positive behavior
+              through a points store, plus attendance monitoring, seating charts,
+              student grouping, academic records, and report generation.
+            </p>
+            <ul class="project-card__tech">
+              <li>Java</li><li>Struts</li><li>Hibernate</li><li>MySQL</li><li>JasperReports</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. CONTACT
+    ============================================================ -->
+    <section class="section contact" id="contact">
+      <div class="container reveal">
+        <h2 class="section__title contact__title"><span class="section__num">05.</span> Contact</h2>
+        <p class="contact__lead">
+          <!-- TODO: personalize -->
+          Have a project in mind, or just want to talk distributed systems?
+          My inbox is always open.
+        </p>
+
+        <div class="contact__links">
+          <a class="contact__link" href="mailto:mrelijahcenteno@gmail.com" aria-label="Email">
+            <span class="contact__icon" aria-hidden="true">&#9993;</span>
+            <span>Email</span>
+          </a>
+          <a class="contact__link" href="https://github.com/codewitheli" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <span class="contact__icon" aria-hidden="true">&lt;/&gt;</span>
+            <span>GitHub</span>
+          </a>
+          <a class="contact__link" href="https://www.linkedin.com/in/elijah-gabriel-c-8a7a43124/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <span class="contact__icon" aria-hidden="true">in</span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        Built with vanilla HTML, CSS &amp; JS. <span class="footer__accent">Designed &amp; coded by Elijah Gabriel Centeno.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
