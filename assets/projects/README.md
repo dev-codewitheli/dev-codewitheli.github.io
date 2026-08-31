@@ -8,9 +8,9 @@ Each project card in `index.html` points at one image here.
 | `splat.webp`          | SPLAT | ✅ captured |
 | `ahc-corporate.webp`  | AHC Corporate Site & Patient Registration | ✅ captured |
 | `piu.webp`            | PIU Report & Automated Response (Petersen) | ✅ captured |
-| `aga-appointment.png` | AGA Clinic Appointment App | ⛔ placeholder — see note |
+| `aga-appointment.webp`| AGA Clinic Appointment App (login screen) | ✅ captured |
 
-The four captured images are landing-page screenshots compressed to WebP
+The captured images are landing-page (or login) screenshots compressed to WebP
 (~1000px wide, quality 80).
 
 **Tips**
@@ -20,6 +20,7 @@ The four captured images are landing-page screenshots compressed to WebP
   landing/hero area looks best (~1200×750 source).
 - Until a file is present, the card shows a graceful `</>` placeholder.
 
-⚠️ **AGA Clinic Appointment App has no screenshot on purpose.** Its live screens
-are login-gated and show real patient names/schedules (PII). Add
-`aga-appointment.png` only from a **redacted, demo, or logged-out** view.
+⚠️ **AGA Clinic Appointment App uses the login screen on purpose.** The app's
+authenticated screens show real patient names/schedules (PII), so only the
+public login page is shown. Never replace it with a logged-in view that
+contains patient data.
