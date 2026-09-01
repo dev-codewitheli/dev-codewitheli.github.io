@@ -540,6 +540,73 @@ h1, h2, h3 {
   color: var(--accent);
 }
 
+/* Certifications reuse the timeline; this styles the optional "Verify" link */
+.cert__verify {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  transition: opacity var(--speed) var(--ease);
+}
+.cert__verify:hover { text-decoration: underline; }
+
+/* Certifications — a distinct credential-card grid (not the timeline) */
+.certs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+.cert-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  overflow: hidden;
+  transition: transform var(--speed) var(--ease), border-color var(--speed) var(--ease), box-shadow var(--speed) var(--ease);
+}
+/* Accent top-bar — this section's visual signature */
+.cert-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--accent-glow);
+}
+.cert-card__seal {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: var(--space-sm);
+}
+.cert-card__date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.cert-card__name {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin: 0.3rem 0 0.35rem;
+}
+.cert-card__issuer {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
 /* -------------------------------------------------------------
    9. PROJECTS
 ------------------------------------------------------------- */
