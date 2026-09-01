@@ -338,7 +338,31 @@
         <h2 class="section__title"><span class="section__num">04.</span> Projects</h2>
 
         <div class="projects__grid">
-          <!-- These are client/production projects — add repo or live URLs where public,
+          <!-- Flagship personal project — live app + public repo. -->
+          <article class="project-card">
+            <div class="project-card__media">
+              <img class="project-card__img" src="assets/projects/joblens.webp" alt="JobLens — AI job-application assistant"
+                   onerror="this.closest('.project-card__media').classList.add('is-empty');this.remove()" />
+              <div class="project-card__links">
+                <a href="https://github.com/dev-codewitheli/joblens" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository" title="GitHub">&lt;/&gt;</a>
+                <a href="https://joblens-9ucp.onrender.com" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Live site" title="Live site">&#8599;</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">JobLens</h3>
+              <p class="project-card__role">Personal project · Live demo</p>
+              <p class="project-card__desc">
+                An AI job-application assistant: paste a job description to get a
+                PII-free fit analysis, gap detection, and tailored resume &amp;
+                cover-letter suggestions, plus a Kanban application tracker.
+              </p>
+              <ul class="project-card__tech">
+                <li>Java</li><li>Spring Boot</li><li>Spring AI</li><li>Hexagonal Architecture</li><li>Docker</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Client / production projects — add repo or live URLs where public,
                otherwise leave href="#" (or remove the link icon).
                SCREENSHOTS: drop image files in assets/projects/ using the src names below.
                If a file is missing the card shows a graceful "</>" placeholder. -->
