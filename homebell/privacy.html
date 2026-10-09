@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HomeBell Privacy Policy</title>
+  <meta name="description" content="What the HomeBell family gate-alert app stores, why, for how long, and how to delete it." />
+  <style>
+    :root {
+      --bg: #fff8f3; --surface: #ffffff; --text: #2b211b; --dim: #6b5a4f;
+      --accent: #b85d12; --border: #ecdccf;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #17120f; --surface: #211a16; --text: #efe4dc; --dim: #b7a395; --accent: #f2a35e; --border: #3a2e27; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 64px; }
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    .logo {
+      width: 52px; height: 52px; border-radius: 16px; background: #e07a1f;
+      display: grid; place-items: center; flex: none;
+    }
+    h1 { font-size: 1.9rem; margin: 0; line-height: 1.2; }
+    h2 { font-size: 1.2rem; margin: 36px 0 8px; color: var(--accent); }
+    .meta { color: var(--dim); margin: 0 0 28px; }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--dim); }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    a { color: var(--accent); }
+    .box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+    ul { padding-left: 1.2rem; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M7.58 4.08 6.15 2.65C3.75 4.48 2.17 7.3 2.03 10.5h2c.15-2.65 1.51-4.97 3.55-6.42zm12.39 6.42h2c-.15-3.2-1.73-6.02-4.12-7.85l-1.42 1.43c2.02 1.45 3.39 3.77 3.54 6.42zM18 11c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2v-5zm-6 11c.14 0 .27-.01.4-.04.65-.14 1.18-.58 1.44-1.18.1-.24.15-.5.15-.78h-4c.01 1.1.9 2 2.01 2z"/></svg>
+    </div>
+    <h1>HomeBell Privacy Policy</h1>
+  </header>
+  <p class="meta">Effective October 9, 2026 · HomeBell is an open-source Android app by Elijah Gabriel Centeno.</p>
+
+  <p>HomeBell lets a family ring each other's phones from the gate, send "on my way" heads-ups,
+    and see who answered. It is designed to collect as little as possible: your family sees only
+    the nickname you choose.</p>
+
+  <h2>What HomeBell stores</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Data</th><th>Why</th><th>Kept for</th></tr>
+    <tr><td>A sign-in identifier from Google (a random user ID, not your email)</td><td>To know which family you belong to</td><td>Until you delete your account</td></tr>
+    <tr><td>Your nickname (e.g. "Papa") and your family's name</td><td>Shown to your family</td><td>Until you leave or delete your account</td></tr>
+    <tr><td>A push token for your phone</td><td>To deliver rings and heads-ups</td><td>Until you sign out, leave, or delete your account</td></tr>
+    <tr><td>Gate activity: who rang, when, and who answered</td><td>The "Recent" list</td><td>90 days</td></tr>
+    <tr><td>"On my way" heads-ups: the estimated time, and who tapped "Got it"</td><td>So someone can open the gate</td><td>About 1 day</td></tr>
+    <tr><td>Crash reports (device model, Android version, the error)</td><td>To fix crashes</td><td>Up to 90 days (Firebase Crashlytics)</td></tr>
+  </table>
+  </div>
+  <p>HomeBell does <strong>not</strong> collect your location, contacts, photos, messages, or
+    phone number, shows no ads, and never sells or shares data for advertising.</p>
+
+  <h2>Sign-in</h2>
+  <p>You sign in with your Google account through Firebase Authentication (a Google service). As
+    part of signing in, Firebase keeps your Google account's email address and name; HomeBell's own
+    server stores only the random user ID and the nickname you type.</p>
+
+  <h2>Who processes the data</h2>
+  <ul>
+    <li><strong>Google Firebase</strong>: sign-in, push notifications (Cloud Messaging) and crash reports (Crashlytics).</li>
+    <li><strong>Render</strong>: runs the HomeBell server (Singapore region).</li>
+    <li><strong>Neon</strong>: hosts the database (Singapore region).</li>
+  </ul>
+  <p>Data is encrypted in transit (HTTPS/TLS). Only you and members of your family can see your
+    family's data in the app.</p>
+
+  <h2>Phone permissions</h2>
+  <ul>
+    <li><strong>Notifications and full-screen alerts</strong>: so a ring can wake a locked phone, like an incoming call.</li>
+    <li><strong>Ignore battery optimizations</strong>: so Android doesn't delay rings to save battery.</li>
+    <li><strong>Do Not Disturb access</strong> (optional, off by default): only if you turn on "Ring even on Silent / Do Not Disturb".</li>
+  </ul>
+
+  <h2>Deleting your data</h2>
+  <div class="box">
+    <p style="margin-top:0"><strong>In the app:</strong> Settings → <em>Delete my account</em>. This
+      removes you from your family, forgets your phone and heads-ups, replaces your nickname in past
+      activity with "Former member", and deletes your HomeBell sign-in.</p>
+    <p style="margin-bottom:0"><strong>Without the app:</strong> email
+      <a href="mailto:mrelijahcenteno@gmail.com?subject=HomeBell%20account%20deletion">mrelijahcenteno@gmail.com</a>
+      with the subject "HomeBell account deletion" and the nickname and family name you used. Requests
+      are handled within 30 days.</p>
+  </div>
+  <p>You can also just leave a family (Settings → <em>Leave family</em>) and keep your account.</p>
+
+  <h2>Children</h2>
+  <p>HomeBell is meant for families. Children should use it with a parent's or guardian's permission;
+    it collects no more from them than from anyone else.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted here with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: <a href="mailto:mrelijahcenteno@gmail.com">mrelijahcenteno@gmail.com</a> ·
+    Source code: <a href="https://github.com/dev-codewitheli/famcare">github.com/dev-codewitheli/famcare</a></p>
+</main>
+</body>
+</html>
