@@ -9,7 +9,7 @@ Each project card in `index.html` points at one image here.
 | `ahc-corporate.webp`  | AHC Corporate Site & Patient Registration | ✅ captured |
 | `piu.webp`            | PIU Report & Automated Response (Petersen) | ✅ captured |
 | `aga-appointment.webp`| AGA Clinic Appointment App (login screen) | ✅ captured |
-| `homebell.png`        | HomeBell (three phone screens on orange, made-up "Dela Cruz" demo family) | ✅ composed |
+| `homebell.png`        | HomeBell (home, locked-phone ring, ringing; made-up "Dela Cruz" demo family) | ✅ composed |
 
 The captured images are landing-page (or login) screenshots compressed to WebP
 (~1000px wide, quality 80).
