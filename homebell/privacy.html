@@ -45,20 +45,21 @@
     </div>
     <h1>HomeBell Privacy Policy</h1>
   </header>
-  <p class="meta">Effective October 9, 2026 · HomeBell is an open-source Android app by Elijah Gabriel Centeno.</p>
+  <p class="meta">Updated October 10, 2026 · HomeBell is an open-source Android app by Elijah Gabriel Centeno.</p>
 
   <p>HomeBell lets a family ring each other's phones from the gate, send "on my way" heads-ups,
     and see who answered. It is designed to collect as little as possible: your family sees only
-    the nickname you choose.</p>
+    the nickname and icon you choose.</p>
 
   <h2>What HomeBell stores</h2>
   <div class="table-wrap">
   <table>
     <tr><th>Data</th><th>Why</th><th>Kept for</th></tr>
     <tr><td>A sign-in identifier from Google (a random user ID, not your email)</td><td>To know which family you belong to</td><td>Until you delete your account</td></tr>
-    <tr><td>Your nickname (e.g. "Papa") and your family's name</td><td>Shown to your family</td><td>Until you leave or delete your account</td></tr>
+    <tr><td>Your nickname (e.g. "Papa") and, if you pick one, a family-role icon (e.g. "Father"; no photos)</td><td>Shown to your family</td><td>Until you delete your account. If you only leave, your family's past activity still shows it.</td></tr>
+    <tr><td>Your family's name and invite code</td><td>Shown to your family; lets others join</td><td>Until the last member leaves or deletes their account</td></tr>
     <tr><td>A push token for your phone</td><td>To deliver rings and heads-ups</td><td>Until you sign out, leave, or delete your account</td></tr>
-    <tr><td>Gate activity: who rang, when, and who answered</td><td>The "Recent" list</td><td>90 days</td></tr>
+    <tr><td>Gate activity: who rang, who was rung, when, and who answered</td><td>The "Recent" list</td><td>90 days</td></tr>
     <tr><td>"On my way" heads-ups: the estimated time, and who tapped "Got it"</td><td>So someone can open the gate</td><td>About 1 day</td></tr>
     <tr><td>Crash reports (device model, Android version, the error)</td><td>To fix crashes</td><td>Up to 90 days (Firebase Crashlytics)</td></tr>
   </table>
@@ -69,7 +70,7 @@
   <h2>Sign-in</h2>
   <p>You sign in with your Google account through Firebase Authentication (a Google service). As
     part of signing in, Firebase keeps your Google account's email address and name; HomeBell's own
-    server stores only the random user ID and the nickname you type.</p>
+    server stores only the random user ID, the nickname you type, and the icon you pick.</p>
 
   <h2>Who processes the data</h2>
   <ul>
@@ -97,7 +98,9 @@
       with the subject "HomeBell account deletion" and the nickname and family name you used. Requests
       are handled within 30 days.</p>
   </div>
-  <p>You can also just leave a family (Settings → <em>Leave family</em>) and keep your account.</p>
+  <p>You can also just leave a family (Settings → <em>Leave family</em>) and keep your account.
+    When the last member of a family leaves or deletes their account, the family is deleted with
+    everything in it: its name, invite code, gate activity, and heads-ups.</p>
 
   <h2>Children</h2>
   <p>HomeBell is meant for families. Children should use it with a parent's or guardian's permission;
